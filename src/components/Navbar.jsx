@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-scroll";
 import { motion, AnimatePresence } from "framer-motion";
+import {Menu , X}  from "lucide-react";
 
 
 function Navbar() {
@@ -54,7 +55,7 @@ function Navbar() {
           className="md:hidden text-gray-700 dark:text-gray-200"
           onClick={() => setOpen(!open)}
         >
-          
+          {open ? <X size={28} /> : <Menu size={23}/>}
         </button>
       </div>
 
@@ -62,6 +63,7 @@ function Navbar() {
       <AnimatePresence>
         {open && (
           <motion.ul
+          key="mobileMenu"
             className="md:hidden flex flex-col items-center gap-6 py-6 bg-white/90 dark:bg-gray-900/90 backdrop-blur-lg shadow-md"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}

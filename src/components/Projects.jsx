@@ -5,7 +5,7 @@ const projects = [
   {
     id: 1,
     title: "Chat Application",
-    description: "A Chat Application built with React & Node.js",
+    description: "A Chat Application built with React & Firebase",
     details:
       "The Chat Application is a real-time communication platform that allows users to instantly connect with friends, colleagues, or customers. It supports one-to-one with features like message delivery status, typing indicators, and multimedia sharing. Built with modern technologies, it ensures smooth, fast, and secure communication across devices. This application can be used for personal chats, professional collaboration, or customer support.",
     image:
@@ -49,7 +49,7 @@ function Projects() {
         <div
           className={`${
             selectedProject
-              ? "col-span-1 flex flex-col gap-6 md:ml-30 ml-20" // stack cards when detail is open
+              ? "col-span-1 flex flex-col gap-6 md:ml-30 ml-13" // stack cards when detail is open
               : "flex flex-row flex-wrap gap-6 justify-center  "
           }`}
         >
