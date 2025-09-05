@@ -49,7 +49,7 @@ function Projects() {
         <div
           className={`${
             selectedProject
-              ? "col-span-1 flex flex-col gap-6 md:ml-30 ml-13" // stack cards when detail is open
+              ? "col-span-1 flex flex-col gap-6 md:ml-30 m-[auto]" // stack cards when detail is open
               : "flex flex-row flex-wrap gap-6 justify-center  "
           }`}
         >
@@ -58,8 +58,7 @@ function Projects() {
               key={project.id}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
-              className={`bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden cursor-pointer border-2 transition-all w-82 h-70  
-                ${
+              className={`bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden cursor-pointer border-2 transition-all w-82 h-70
                   selectedProject?.id === project.id
                     ? "border-blue-500"
                     : "border-transparent"
