@@ -1,114 +1,157 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
+import { ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
     id: 1,
-    title: "Chat Application",
-    description: "A Chat Application built with React & Firebase",
+    title: "Campus Marketplace",
+    description:
+      "A MERN stack marketplace platform for college students.",
+
     details:
-      "The Chat Application is a real-time communication platform that allows users to instantly connect with friends, colleagues, or customers. It supports one-to-one with features like message delivery status, typing indicators, and multimedia sharing. Built with modern technologies, it ensures smooth, fast, and secure communication across devices. This application can be used for personal chats, professional collaboration, or customer support.",
+      "Campus Marketplace is a full-stack web application developed for students to buy and sell products within their college campus. The platform includes secure authentication, product uploads, category filters, search functionality, and responsive UI design.",
+
+    tech: ["React", "Node.js", "MongoDB", "Express"],
+
     image:
-      "https://img.freepik.com/premium-vector/chat-app-logo-design-template-can-be-used-icon-chat-application-logo_605910-1724.jpg",
+      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop",
+
+    live: "#",
+    github: "https://github.com/mayankpratap652/Campus-MarketPlace",
   },
+
   {
     id: 2,
-    title: "E-Commerce Store",
-    description: "Full-stack shopping app with cart, wishlist & payments",
+    title: "Doctor Appointment",
+    description:
+      "Online doctor appointment booking and management system.",
+
     details:
-      "The E-Commerce Website is a fully functional online shopping platform designed to deliver a seamless buying experience. Users can browse products by category, apply filters, and view detailed descriptions with images, ratings, and reviews. With features like shopping carts, wishlists, secure payment gateways, it provides everything needed for a complete online retail experience. The platform also includes an admin dashboard for managing inventory, products, and customer orders.",
+      "Doctor Appointment System allows users to register, login, search doctors, and book appointments online with secure API integration and responsive design.",
+
+    tech: ["React", "Express.js", "MongoDB", "Node.js"],
+
     image:
-      "https://static.vecteezy.com/system/resources/previews/023/307/947/non_2x/ai-generative-e-commerce-online-shopping-concept-delivery-concept-free-photo.jpg",
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZG9jdG9yJTIwYXBwb2ludG1lbnR8ZW58MHx8MHx8fDA%3D",
+
+    live: " https://doctor-appointmen-system-0i4i.onrender.com",
+    github: "https://github.com/mayankpratap652/Doctor_Appointmen_System.git",
   },
+
   {
     id: 3,
-    title: "Blog Website",
-    description: "My Blog Site built with React & Tailwind",
+    title: "E-Commerce with Firebase",
+    description:
+      "Modern e-commerce application using React and Firebase.",
+
     details:
-      "The Blog Website is a modern publishing platform for writers and creators to share ideas, stories, and updates. It includes a clean and responsive design with features such as rich-text editing, categories, tags, and a comment system to encourage interaction. Authors can manage their posts, while readers can easily navigate through articles and engage with content. Optimized for both readability and SEO, the platform works smoothly on all devices, making it perfect for personal blogs, portfolios, or company news portals.",
+      "Developed a responsive e-commerce application with Firebase authentication, cart functionality, product listings, and real-time database integration.",
+
+    tech: ["React", "Firebase", "Tailwind CSS"],
+
     image:
-      "https://tse1.mm.bing.net/th/id/OIP.8nyiQUrOsnc_PgB3BlqB_wHaD4?pid=Api&P=0&h=180",
+      "https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1200&auto=format&fit=crop",
+
+    live: "#",
+    github: "https://github.com/mayankpratap652/Project-Ecom-payment",
   },
 ];
 
 function Projects() {
-  const [selectedProject, setSelectedProject] = useState(null);
-
   return (
-    <section id="projects" className="py-16 px-6 bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-700 dark:to-gray-800">
-      <h2 className="text-3xl font-bold text-center mb-12">Projects</h2>
-
-      <div
-        className={`transition-all duration-500 ${
-          selectedProject
-            ? "grid grid-cols-1 md:grid-cols-2 gap-8" // two-column when selected
-            : "flex flex-row flex-wrap gap-6 justify-center" // horizontal by default
-        }`}
+    <section
+      id="projects"
+      className="py-24 px-6 md:px-20 bg-[#111111]"
+    >
+      {/* Heading */}
+      <motion.h2
+        className="text-4xl md:text-5xl font-bold text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-orange-400 to-red-400"
+        initial={{ opacity: 0, y: -30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
       >
-        {/* Left side - project cards */}
-        <div
-          className={`${
-            selectedProject
-              ? "col-span-1 flex flex-col gap-6 md:ml-30 m-[auto]" // stack cards when detail is open
-              : "flex flex-row flex-wrap gap-6 justify-center  "
-          }`}
-        >
-          {projects.map((project) => (
-            <motion.div
-              key={project.id}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-              className={`bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden cursor-pointer border-2 transition-all w-82 h-70
-                  selectedProject?.id === project.id
-                    ? "border-blue-500"
-                    : "border-transparent"
-                }`}
-              onClick={() =>
-                setSelectedProject(
-                  selectedProject?.id === project.id ? null : project
-                )
-              }
-            >
+        Projects
+      </motion.h2>
+
+      {/* Projects Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        {projects.map((project) => (
+          <motion.div
+            key={project.id}
+            whileHover={{ y: -8 }}
+            transition={{ duration: 0.3 }}
+            className="bg-[#1a1a1a] border border-white/5 rounded-3xl overflow-hidden shadow-lg hover:border-amber-400/30 transition-all duration-300 flex flex-col"
+          >
+            {/* Image */}
+            <div className="overflow-hidden">
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-40 object-cover"
+                className="w-full h-56 object-cover hover:scale-110 transition duration-500"
               />
-              <div className="p-4">
-                <h3 className="text-lg font-semibold">{project.title}</h3>
-                <p className="text-gray-600 dark:text-gray-300 text-sm">
-                  {project.description}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+            </div>
 
-        {/* Right side - selected project detail */}
-        {selectedProject && (
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: 50 }}
-            transition={{ duration: 0.4 }}
-            className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-6 "
-          >
-            <img
-              src={selectedProject.image}
-              alt={selectedProject.title}
-              className="w-full h-80 object-cover rounded-xl mb-6"
-            />
-            <h3 className="text-2xl font-bold mb-3">
-              {selectedProject.title}
-            </h3>
-            <p className="text-gray-700 dark:text-gray-300 mb-4">
-              {selectedProject.description}
-            </p>
-            <p className="text-gray-600 dark:text-gray-400">
-              {selectedProject.details}
-            </p>
+            {/* Content */}
+            <div className="p-6 flex flex-col flex-grow">
+
+              <h3 className="text-2xl font-semibold text-white mb-3">
+                {project.title}
+              </h3>
+
+              <p className="text-amber-300 text-sm mb-3">
+                {project.description}
+              </p>
+
+              {/* Limited Description */}
+              <p className="text-gray-400 text-sm leading-relaxed line-clamp-4">
+                {project.details}
+              </p>
+
+              {/* Tech Stack */}
+              <div className="flex flex-wrap gap-2 mt-5">
+                {project.tech.map((tech, index) => (
+                  <span
+                    key={index}
+                    className="px-3 py-1 text-xs rounded-full bg-amber-500/10 border border-amber-400/20 text-amber-300"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              {/* Buttons */}
+              <div className="flex items-center justify-between gap-3 mt-6 flex-nowrap">
+
+                {/* Live Demo */}
+                <a
+                  href={project.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-amber-400 text-black font-medium hover:scale-105 transition duration-300"
+                >
+                  <ExternalLink size={18} />
+                  Live Demo
+                </a>
+
+                {/* GitHub */}
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-xl border border-white/10 text-white hover:bg-white hover:text-black transition duration-300"
+                >
+                  <Github size={18} />
+                  Code
+                </a>
+
+              </div>
+            </div>
           </motion.div>
-        )}
+        ))}
+
       </div>
     </section>
   );

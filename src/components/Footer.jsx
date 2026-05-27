@@ -1,48 +1,74 @@
 import React from "react";
-import { Github, Linkedin, Instagram, Mail } from "lucide-react";
+import {
+  Github,
+  Linkedin,
+  Instagram,
+  Mail,
+} from "lucide-react";
 
 function Footer() {
   return (
-    <footer className="py-8 text-center bg-gray-100 dark:bg-gray-900">
-      <div className="flex justify-center gap-6 mb-4">
-        <a
-          href="https://github.com/mayankpratap652"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition"
-        >
-          <Github size={24} />
-        </a>
+    <footer className="bg-[#0d0d0d] border-t border-white/5 py-10 px-6">
 
-        <a
-          href="https://linkedin.com/in/mayank-pratap-singh-73176a331/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition"
-        >
-          <Linkedin size={24} />
-        </a>
+      <div className="max-w-7xl mx-auto flex flex-col items-center justify-center">
 
-        <a
-          href="https://instagram.com/mynkk_fitness_2.0"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-gray-600 dark:text-gray-400 hover:text-pink-500 transition"
-        >
-          <Instagram size={24} />
-        </a>
+        {/* Logo / Name */}
+        <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-orange-400 to-red-400 mb-6 tracking-wide">
+          Mayank Pratap Singh
+        </h2>
 
-        <a
-          href="mailto:mayankjadon349@gmail.com"
-          className="text-gray-600 dark:text-gray-400 hover:text-green-500 transition"
-        >
-          <Mail size={24} />
-        </a>
+        {/* Social Icons */}
+        <div className="flex items-center gap-5 mb-6">
+
+          {/* GitHub */}
+          <a
+            href="https://github.com/mayankpratap652"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-12 h-12 rounded-2xl bg-[#1a1a1a] border border-white/5 flex items-center justify-center text-gray-300 hover:bg-white hover:text-black hover:scale-110 transition duration-300"
+          >
+            <Github size={22} />
+          </a>
+
+          {/* LinkedIn */}
+          <a
+            href="https://linkedin.com/in/mayank-pratap-singh-73176a331/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-12 h-12 rounded-2xl bg-[#1a1a1a] border border-white/5 flex items-center justify-center text-gray-300 hover:bg-amber-400 hover:text-black hover:scale-110 transition duration-300"
+          >
+            <Linkedin size={22} />
+          </a>
+
+          {/* Instagram */}
+          <a
+            href="https://instagram.com/mynkk_fitness_2.0"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-12 h-12 rounded-2xl bg-[#1a1a1a] border border-white/5 flex items-center justify-center text-gray-300 hover:bg-pink-500 hover:text-white hover:scale-110 transition duration-300"
+          >
+            <Instagram size={22} />
+          </a>
+
+          {/* Mail */}
+          <a
+            href="mailto:mayankjadon349@gmail.com?subject=Portfolio%20Contact&body=Hello%20Mayank,"
+            className="w-12 h-12 rounded-2xl bg-[#1a1a1a] border border-white/5 flex items-center justify-center text-gray-300 hover:bg-green-500 hover:text-white hover:scale-110 transition duration-300"
+          >
+            <Mail size={22} />
+          </a>
+
+        </div>
+
+        {/* Divider */}
+        <div className="w-32 h-[1px] bg-gradient-to-r from-transparent via-amber-400/40 to-transparent mb-5"></div>
+
+        {/* Copyright */}
+        <p className="text-gray-500 text-sm text-center">
+          © {new Date().getFullYear()} Mayank Pratap Singh. All Rights Reserved.
+        </p>
+
       </div>
-
-      <p className="text-gray-600 dark:text-gray-400 text-sm">
-        © {new Date().getFullYear()} Mayank Pratap Singh. All rights reserved.
-      </p>
     </footer>
   );
 }
