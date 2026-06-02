@@ -17,7 +17,7 @@ const projects = [
     image:
       "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop",
 
-    live: "#",
+    live: "https://campus-marketplace-0eju.onrender.com/",
     github: "https://github.com/mayankpratap652/Campus-MarketPlace",
   },
 
